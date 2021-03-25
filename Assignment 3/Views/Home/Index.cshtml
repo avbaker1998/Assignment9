@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "The Joel Hilton Film Collection";
+}
+
+<!--Main home page for website-->
+<div class="text-center container">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome To @ViewBag.Title</h1>
+        <br />
+        <img src="~/lib/JoelHilton.jpg" width="300"/>
+
+
+        <!--When creating a link between pages start here with
+        1. asp-action then the page name (a view) you want to link to.
+        2. Next, Go to the homecontroller and add public IActionResult (Name of the page)()
+        {
+            return View (that returns the view to the said view page)
+        If you want to return it to a different page -> return View(DifferentPageName)
+
+        }
+        -->
+        <br /><br /><br /><br />
+        <a class="btn btn-dark" asp-controller="MoviesModels" asp-action="Create">Click Here to Add a Movie!</a>
+
+    </div>
+</div>
+

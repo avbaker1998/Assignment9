@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Movies";
+
+}
+@model Assignment_3.Models.MoviesModel 
+    @*connected to the MovieModels.cs page*@
+
+<body>
+    <h2>Movie Collection</h2>
+    <!--action is in the controller, connect it with asp-action and the 
+        model that its connected to, then post method-->
+    <form asp-action="Movies" method="post">
+        <div>
+            <label asp-for="Category">Category:</label>
+            <input type="text" id="Category" asp-for="Category" />
+        </div>
+        <div>
+            <label asp-for="Title">Title:</label>
+            <input type="text" id="Title" asp-for="Title" />
+        </div>
+        <div>
+            <label asp-for="Year">Year:</label>
+            <input type="text" id="Year" asp-for="Year" />
+        </div>
+        <div>
+            <label asp-for="Director">Director:</label>
+            <input type="text" id="Director" asp-for="Director" />
+        </div>
+        <div>
+            <label asp-for="Rating">Rating:</label>
+            <select asp-for="Rating">
+                <option value="">Select One</option>
+                <option value="g">G</option>
+                <option value="pg">PG</option>
+                <option value="pg13">PG-13</option>
+                <option value="r">R</option>
+            </select>
+        </div>
+        <div>
+            <label asp-for="Edited">Edited:</label>
+            <select asp-for="Edited">
+                <option value="">Select One</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+        <div>
+            <label asp-for="Lent">Lent To:</label>
+            <input type="text" id="Lent" asp-for="Lent" />
+        </div>
+        <div>
+            <label asp-for="Notes">Notes:</label>
+            <input type="text" max="25" id="Notes" asp-for="Notes" />
+        </div>
+
+        <br /><br />
+        <!--<button type="submit">Add Movie</button>-->
+        <input type="submit" value="Add Movie" id="submitButton" />
+        <div asp-validation-summary="All"></div>
+    </form>
+
+    <script src="~/js/Movies.js"></script>
+</body>

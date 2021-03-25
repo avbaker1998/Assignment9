@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Movie Recieved, Thank you for submitting your movie!";
+}
+
+@model Assignment_3.Models.MoviesModel
+
+
+
+<div>
+    <h2>Your movie is recieved!</h2>
+
+    @if (Model.Title == "Independence Day")
+    {
+        @:Joel once argued in a 4th of July podcast that “Independence Day” beats “Rocky IV” as the “Most American Movie Ever Made” which is obviously not true! 
+    }
+    else
+    {
+        @:What great movie taste you have!
+    }
+</div>
+
+<div>
+    Click <a asp-action="ListedMovies">Here</a> to see a list of the movies.
+</div>

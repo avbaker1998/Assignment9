@@ -1,0 +1,83 @@
+﻿@model Assignment_3.Models.MoviesModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="text-center">
+    <h1>Submit a New Movie to Add to the Collection</h1>
+</div>
+<!--Create page for the movie model -->
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label">Category:</label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Title:</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label">Year:</label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Director" class="control-label">Director:</label>
+                <input asp-for="Director" class="form-control" />
+                <span asp-validation-for="Director" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rating" class="control-label">Rating:</label>
+                <select asp-for="Rating" class="form-control">
+                    <option value="">Select One</option>
+                    <option value="g">G</option>
+                    <option value="pg">PG</option>
+                    <option value="pg13">PG-13</option>
+                    <option value="r">R</option>
+                </select>
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Edited:</label>
+                <select asp-for="Edited" class="form-control">
+                    <option value="">Select One</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+                <!-- <input class="form-check-input" asp-for="Edited" /> @Html.DisplayNameFor(model => model.Edited)-->
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Lent" class="control-label">Lent To:</label>
+                <input asp-for="Lent" class="form-control" />
+                <span asp-validation-for="Lent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label">Notes:</label>
+                <input asp-for="Notes" class="form-control" max="25" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
